@@ -5,7 +5,7 @@ internal static class Guard
     internal static void AgainstNegativeValue<TException>(decimal value)
             where TException : DomainException, new()
     {
-        if (value < 0)
+        if (value >= 0)
         {
             return;
         }

@@ -10,6 +10,8 @@ public class CarSale : Entity, IAggregateRoot
 
     protected internal CarSale(Manufacturer manufacturer, Transmission transmission, decimal price)
     {
+        ValidatePrice(price);
+
         Manufacturer = manufacturer;
         Transmission = transmission;
         Price = price;
