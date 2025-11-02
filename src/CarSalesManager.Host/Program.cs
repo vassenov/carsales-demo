@@ -1,0 +1,20 @@
+﻿using CarSalesManager.Host;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Setup();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+app.Initialize();
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
+app.MapControllers();
+
+app.Run();
